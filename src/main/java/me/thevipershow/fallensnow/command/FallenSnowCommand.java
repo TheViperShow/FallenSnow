@@ -59,9 +59,9 @@ public final class FallenSnowCommand implements CommandExecutor {
     public final void toggleWorld(final String toggle , final String worldName, final CommandSender sender) {
         for (final World world : Bukkit.getWorlds()) {
             if (world.getName().equals(worldName)) {
-                particleManager.getEnabledWorlds().put(world, Toggle.valueOf(toggle).isB());
+                particleManager.getEnabledWorlds().put(world.getUID(), Toggle.valueOf(toggle).isB());
                 sender.sendMessage(color("&8[&bFallenSnow&8]&7: successfully changed animation status."));
-                break;
+                return;
             }
         }
         sender.sendMessage(color("&8[&bFallenSnow&8]&7: &cno world with this name exists."));

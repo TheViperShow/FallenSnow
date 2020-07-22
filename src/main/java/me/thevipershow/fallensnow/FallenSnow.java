@@ -13,7 +13,7 @@ public final class FallenSnow extends JavaPlugin {
         final Values values = Values.getInstance(this);
         values.updateAll();
         final ParticleManager particleManager = ParticleManager.getInstance(this, values);
-        Bukkit.getWorlds().forEach(w -> particleManager.getEnabledWorlds().put(w, true));
+        Bukkit.getWorlds().forEach(w -> particleManager.getEnabledWorlds().put(w.getUID(), true));
         particleManager.startAnimation();
         final FallenSnowCommand command = new FallenSnowCommand(this, values, particleManager);
         Bukkit.getPluginCommand("fsnow").setExecutor(command);
