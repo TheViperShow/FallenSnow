@@ -1,0 +1,22 @@
+snow:
+  #Some particles may not work, the only stable ones I've tested so far are: fireworks_spark, dolphin, flame,totem,damage_indicator,
+  #There's also 'sweep_attack' that creates a really cool "wind" effect near to the player!
+  particle: 'fireworks_spark' #Choose snow particle, WARNING: MUST BE INSIDE THIS LIST! https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
+  range: 10.00             #the radius of snow spawn range
+  speed: 0.001             #the speed of snow (leave it low)
+  amount: 15               #the amount of particles to be spawned
+  spawnrate: 0.60          #how often should a particle be spawned (in seconds)
+  snow-only-on-top: true   #Only spawn snow if player is outside (spawn will stop spawning if he's inside houses or caves, etc).
+  #»
+  #»
+  other-settings:
+    above: false              #only spawn snow if Player is above Y value set below
+    y: 62
+  #
+  #  ______    _ _             _____
+  # |  ____|  | | |           / ____|
+  # | |__ __ _| | | ___ _ __ | (___  _ __   _____      __
+  # |  __/ _` | | |/ _ \ '_ \ \___ \| '_ \ / _ \ \ /\ / /
+  # | | | (_| | | |  __/ | | |____) | | | | (_) \ V  V /
+  # |_|  \__,_|_|_|\___|_| |_|_____/|_| |_|\___/ \_/\_/
+  # By TheViperShow <3
