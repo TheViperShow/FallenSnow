@@ -1,5 +1,7 @@
 package me.thevipershow.fallensnow.command;
 
+import java.util.HashMap;
+import java.util.UUID;
 import me.thevipershow.fallensnow.ParticleManager;
 import me.thevipershow.fallensnow.config.Values;
 import org.bukkit.Bukkit;
@@ -8,6 +10,7 @@ import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
 public final class FallenSnowCommand implements CommandExecutor {
@@ -30,9 +33,10 @@ public final class FallenSnowCommand implements CommandExecutor {
 
     private static void help(final CommandSender s) {
         s.sendMessage(color("&8[&bFallenSnow&8]&7: help page"));
-        s.sendMessage(color("&7&b/fsnow enable <worldname>"));
-        s.sendMessage(color("&7&b/fsnow disable <worldname>"));
-        s.sendMessage(color("&7&b/fsnow reload"));
+        s.sendMessage(color("  &3| &7&b/fsnow enable <worldname>"));
+        s.sendMessage(color("  &3| &7&b/fsnow disable <worldname>"));
+        s.sendMessage(color("  &3| &7&b/fsnow toggle"));
+        s.sendMessage(color("  &3| &7&b/fsnow reload"));
     }
 
     private static void reload(final CommandSender s, final Values values) {
@@ -67,6 +71,24 @@ public final class FallenSnowCommand implements CommandExecutor {
         sender.sendMessage(color("&8[&bFallenSnow&8]&7: &cno world with this name exists."));
     }
 
+    private final void toggle(CommandSender commandSender) {
+        if (commandSender instanceof Player) {
+            HashMap<UUID, Boolean> toggleMap = particleManager.getToggleSettings();
+            UUID uuid = ((Player) commandSender).getUniqueId();
+            Boolean value = toggleMap.get(uuid);
+            if (value == null) {
+                toggleMap.put(uuid, false);
+                commandSender.sendMessage(color("&8[&bFallenSnow&8]&7: you have update your toggle status to &bfalse"));
+            } else {
+                final boolean inverted = !value;
+                toggleMap.put(uuid, inverted);
+                commandSender.sendMessage(color("&8[&bFallenSnow&8]&7: you have update your toggle status to &b" + inverted));
+            }
+        } else {
+            commandSender.sendMessage(color("&8[&bFallenSnow&8]&7: &cyou need to be a player to do this."));
+        }
+    }
+
     @Override
     public boolean onCommand(final CommandSender sender, final Command command, final String label, final String[] args) {
         final int count = args.length;
@@ -77,18 +99,33 @@ public final class FallenSnowCommand implements CommandExecutor {
         } else if (count == 1) {
             final String firstArg = args[0].toUpperCase();
             if (firstArg.equals("RELOAD")) {
-                reload(sender, values);
+                if (sender.hasPermission("fallen-snow.admin")) {
+                    reload(sender, values);
+                    success = true;
+                } else {
+                    sender.sendMessage(color("&8[&bFallenSnow&8]&7: &cmissing \"fallen-snow.admin\" permission"));
+                }
+            } else if (firstArg.equals("TOGGLE")) {
+                toggle(sender);
                 success = true;
             }
         } else if (count == 2) {
             final String firstArg = args[0].toUpperCase();
             final String secondArg = args[1];
             if (firstArg.equals("ENABLE")) {
-                toggleWorld(firstArg, secondArg, sender);
-                success = true;
+                if (sender.hasPermission("fallen-snow.admin")) {
+                    toggleWorld(firstArg, secondArg, sender);
+                    success = true;
+                } else {
+                    sender.sendMessage(color("&8[&bFallenSnow&8]&7: &cmissing \"fallen-snow.admin\" permission"));
+                }
             } else if (firstArg.equals("DISABLE")) {
-                toggleWorld(firstArg, secondArg, sender);
-                success = true;
+                if (sender.hasPermission("fallen-snow.admin")) {
+                    toggleWorld(firstArg, secondArg, sender);
+                    success = true;
+                } else {
+                    sender.sendMessage(color("&8[&bFallenSnow&8]&7: &cmissing \"fallen-snow.admin\" permission"));
+                }
             }
         }
         return success;

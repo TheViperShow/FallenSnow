@@ -1,5 +1,7 @@
 package me.thevipershow.fallensnow.config;
 
+import java.util.List;
+import java.util.Locale;
 import org.bukkit.Particle;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
@@ -27,13 +29,16 @@ public final class Values {
     private double spawnrate;
     private boolean snowOnTop;
     private boolean aboveEnabled;
+    private boolean specifyWorlds;
+    private boolean snowWhenRaining;
+    private List<String> worldNames;
     private int aboveY;
 
-    public void updateAll() {
+    public final void updateAll() {
         plugin.reloadConfig();
         final FileConfiguration config = plugin.getConfig();
         particle = config.getString("snow.particle");
-        particleType = Particle.valueOf(particle.toUpperCase());
+        particleType = Particle.valueOf(particle.toUpperCase(Locale.ROOT));
         range = config.getDouble("snow.range");
         speed = config.getDouble("snow.speed");
         amount = config.getInt("snow.amount");
@@ -41,41 +46,56 @@ public final class Values {
         snowOnTop = config.getBoolean("snow.snow-only-on-top");
         aboveEnabled = config.getBoolean("snow.other-settings.above");
         aboveY = config.getInt("snow.other-settings.y");
+        specifyWorlds = config.getBoolean("specify-enabled-worlds");
+        worldNames = config.getStringList("enabled-world-names");
+        snowOnTop = config.getBoolean("snow-when-raining");
     }
 
-    public String getParticle() {
+    public final boolean isSnowWhenRaining() {
+        return snowWhenRaining;
+    }
+
+    public final boolean isSpecifyWorlds() {
+        return specifyWorlds;
+    }
+
+    public final List<String> getWorldNames() {
+        return worldNames;
+    }
+
+    public final String getParticle() {
         return particle;
     }
 
-    public Particle getParticleType() {
+    public final Particle getParticleType() {
         return particleType;
     }
 
-    public double getRange() {
+    public final double getRange() {
         return range;
     }
 
-    public double getSpeed() {
+    public final double getSpeed() {
         return speed;
     }
 
-    public int getAmount() {
+    public final int getAmount() {
         return amount;
     }
 
-    public double getSpawnrate() {
+    public final double getSpawnrate() {
         return spawnrate;
     }
 
-    public boolean isSnowOnTop() {
+    public final boolean isSnowOnTop() {
         return snowOnTop;
     }
 
-    public boolean isAboveEnabled() {
+    public final boolean isAboveEnabled() {
         return aboveEnabled;
     }
 
-    public int getAboveY() {
+    public final int getAboveY() {
         return aboveY;
     }
 }
