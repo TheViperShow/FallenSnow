@@ -34,6 +34,7 @@ public final class FallenSnowTelemetry extends AbstractTelemetry<BStatsChartGene
         this.chartGenerator = new BStatsChartGenerator(metrics, plugin);
         this.chartGenerator.generateCustomCharts();
         isTelemetryStarted = true;
+        plugin.getLogger().info("Telemetry for this plugin has been enabled correctly.");
     }
 
     public final boolean isTelemetryEnabled() {
