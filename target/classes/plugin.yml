@@ -1,6 +1,6 @@
 name: FallenSnow
-version: 2.2.2
-main: me.thevipershow.fallensnow.FallenSnow
+version: 3.0.0
+main: studio.thevipershow.fallensnow.FallenSnow
 authors: [TheViperShow]
 description: Give snow effect in your minecraft server!
 commands:

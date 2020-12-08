@@ -1,5 +1,11 @@
-me\thevipershow\fallensnow\command\FallenSnowCommand$Toggle.class
-me\thevipershow\fallensnow\ParticleManager.class
-me\thevipershow\fallensnow\command\FallenSnowCommand.class
-me\thevipershow\fallensnow\config\Values.class
-me\thevipershow\fallensnow\FallenSnow.class
+studio/thevipershow/fallensnow/config/SectionKey.class
+studio/thevipershow/fallensnow/config/snow/SnowValues.class
+studio/thevipershow/fallensnow/config/snow/SnowTomlConfig.class
+studio/thevipershow/fallensnow/config/ConfigHolder.class
+studio/thevipershow/fallensnow/FallenSnow.class
+studio/thevipershow/fallensnow/config/general/GeneralTomlConfig.class
+studio/thevipershow/fallensnow/config/ConfigTypes.class
+studio/thevipershow/fallensnow/config/general/GeneralValues.class
+studio/thevipershow/fallensnow/config/ConfigurationManager.class
+studio/thevipershow/fallensnow/config/SectionReturnType.class
+studio/thevipershow/fallensnow/config/AbstractTomlConfig.class

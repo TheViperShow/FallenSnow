@@ -1,4 +1,11 @@
-C:\Users\marco\Documents\IntelliJ\FallenSnow\src\main\java\me\thevipershow\fallensnow\command\FallenSnowCommand.java
-C:\Users\marco\Documents\IntelliJ\FallenSnow\src\main\java\me\thevipershow\fallensnow\FallenSnow.java
-C:\Users\marco\Documents\IntelliJ\FallenSnow\src\main\java\me\thevipershow\fallensnow\config\Values.java
-C:\Users\marco\Documents\IntelliJ\FallenSnow\src\main\java\me\thevipershow\fallensnow\ParticleManager.java
+/home/marco/IdeaProjects/FallenSnow/src/main/java/studio/thevipershow/fallensnow/config/SectionKey.java
+/home/marco/IdeaProjects/FallenSnow/src/main/java/studio/thevipershow/fallensnow/config/general/GeneralTomlConfig.java
+/home/marco/IdeaProjects/FallenSnow/src/main/java/studio/thevipershow/fallensnow/config/AbstractTomlConfig.java
+/home/marco/IdeaProjects/FallenSnow/src/main/java/studio/thevipershow/fallensnow/config/general/GeneralValues.java
+/home/marco/IdeaProjects/FallenSnow/src/main/java/studio/thevipershow/fallensnow/config/ConfigTypes.java
+/home/marco/IdeaProjects/FallenSnow/src/main/java/studio/thevipershow/fallensnow/config/snow/SnowValues.java
+/home/marco/IdeaProjects/FallenSnow/src/main/java/studio/thevipershow/fallensnow/FallenSnow.java
+/home/marco/IdeaProjects/FallenSnow/src/main/java/studio/thevipershow/fallensnow/config/ConfigurationManager.java
+/home/marco/IdeaProjects/FallenSnow/src/main/java/studio/thevipershow/fallensnow/config/ConfigHolder.java
+/home/marco/IdeaProjects/FallenSnow/src/main/java/studio/thevipershow/fallensnow/config/SectionReturnType.java
+/home/marco/IdeaProjects/FallenSnow/src/main/java/studio/thevipershow/fallensnow/config/snow/SnowTomlConfig.java

@@ -1,6 +1,6 @@
 name: FallenSnow
 version: ${project.version}
-main: me.thevipershow.fallensnow.FallenSnow
+main: studio.thevipershow.fallensnow.FallenSnow
 authors: [TheViperShow]
 description: Give snow effect in your minecraft server!
 commands:
