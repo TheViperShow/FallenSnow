@@ -1,5 +1,8 @@
 version: 2.1
 
+machine:
+  image: ubuntu-2004:202008-01
+
 orbs:
   maven: circleci/maven@0.0.12
 
