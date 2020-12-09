@@ -2,7 +2,6 @@ package studio.thevipershow.fallensnow.particles;
 
 import com.google.common.collect.ImmutableList;
 import lombok.Getter;
-import org.bukkit.Server;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
@@ -25,10 +24,18 @@ public abstract class ConfigurableGlobalAnimation<T extends ConfigurableParticle
         this.configurableAnimation = configurableAnimation;
     }
 
+    /**
+     * Add a criterion that will be used before checking whether if to use the animation for a single player or not.
+     * @param criterion The criterion.
+     */
     public void addCriterion(PlayerCriterion criterion) {
         this.particleAffectCriteria.add(criterion);
     }
 
+    /**
+     * Get all of the players that match the criterion.
+     * @return All of the players that match the criterion.
+     */
     @Override
     public @NotNull Collection<Player> getAffectedPlayers() {
         return plugin.getServer().getOnlinePlayers().stream()
@@ -36,6 +43,10 @@ public abstract class ConfigurableGlobalAnimation<T extends ConfigurableParticle
                 .collect(Collectors.toUnmodifiableSet());
     }
 
+    /**
+     * Get the used animation.
+     * @return The animation.
+     */
     @Override
     public @NotNull T getAnimation() {
         return configurableAnimation;

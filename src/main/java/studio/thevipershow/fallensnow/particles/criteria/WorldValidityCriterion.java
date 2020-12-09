@@ -8,9 +8,9 @@ import studio.thevipershow.fallensnow.particles.PlayerCriterion;
 import studio.thevipershow.fallensnow.worlds.ValidWorldsHolder;
 
 @RequiredArgsConstructor
-@Getter
-public final class WorldValidityCriteria implements PlayerCriterion {
+public final class WorldValidityCriterion implements PlayerCriterion {
 
+    @Getter
     private final ValidWorldsHolder validWorldsHolder;
 
     @Override

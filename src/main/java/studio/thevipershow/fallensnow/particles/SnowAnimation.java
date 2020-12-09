@@ -11,6 +11,10 @@ public final class SnowAnimation extends ConfigurableParticleAnimation {
         super(particle, range, speed, amount);
     }
 
+    /**
+     * Run an animation for a player.
+     * @param player The player who will receive the animation.
+     */
     @Override
     public final void doAnimation(@NotNull Player player) {
         var x = player.getLocation().getX();

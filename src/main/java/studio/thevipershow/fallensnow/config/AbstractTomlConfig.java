@@ -44,10 +44,25 @@ public abstract class AbstractTomlConfig<T extends Enum<T> & SectionKey & Sectio
         loadAllConfigValues();
     }
 
+    /**
+     * Get the value from the configuration using one of its enum values.
+     *
+     * @param enumEntry  The enum that represents the config field.
+     * @param returnType The type of data that should be returned by this config
+     *                   (note that you should never use primitive classes!)
+     * @param <S>        The type of return.
+     * @throws IllegalArgumentException If the cast is unsuccessful.
+     * @return The value obtained from the config cast to the return type
+     */
     @Nullable
     public final <S> S getConfigValue(@NotNull T enumEntry, @NotNull Class<S> returnType) {
         if (this.configValues.containsKey(enumEntry)) {
-            return (S) this.configValues.get(enumEntry);
+            var obtained = this.configValues.get(enumEntry);
+            if (returnType.isAssignableFrom(obtained.getClass()))
+                return (S) obtained;
+            else
+                throw new IllegalArgumentException(String.format("The return type for %s inside config %s was %s but it has been tried to be cast to %s.",
+                        enumEntry.getKey(), getClass().getSimpleName(), obtained.getClass().getSimpleName(), returnType.getSimpleName()));
         } else {
             return null;
         }

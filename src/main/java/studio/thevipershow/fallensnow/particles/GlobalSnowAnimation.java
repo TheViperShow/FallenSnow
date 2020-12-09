@@ -40,7 +40,7 @@ public final class GlobalSnowAnimation extends ConfigurableGlobalAnimation<SnowA
 
         var specifyWorlds = snowTomlConfig.getConfigValue(SnowValues.SPECIFY_ENABLED_WORLDS, Boolean.class);
         if (specifyWorlds != null && specifyWorlds) {
-            addCriterion(new WorldValidityCriteria(getPlugin().getWorldsHolder()));
+            addCriterion(new WorldValidityCriterion(getPlugin().getWorldsHolder()));
         }
     }
 

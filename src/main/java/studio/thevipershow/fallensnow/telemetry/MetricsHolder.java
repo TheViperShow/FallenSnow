@@ -6,6 +6,10 @@ import org.jetbrains.annotations.NotNull;
 @FunctionalInterface
 public interface MetricsHolder {
 
+    /**
+     * Get the Metrics for telemetry.
+     * @return The Metrics.
+     */
     @NotNull
     Metrics getMetrics();
 }

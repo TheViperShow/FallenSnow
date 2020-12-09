@@ -9,7 +9,6 @@ import studio.thevipershow.fallensnow.config.SectionReturnType;
 public enum GeneralValues implements SectionKey, SectionReturnType {
 
     CONFIG_VERSION("config.version", Long.class),
-
     TELEMETRY_ENABLED("telemetry.enabled", Boolean.class);
 
     private final String key;

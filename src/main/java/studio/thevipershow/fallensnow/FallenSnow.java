@@ -20,7 +20,7 @@ public final class FallenSnow extends JavaPlugin {
     private AbstractConfigurableParticlesTaskManager<FallenSnow, ? extends GlobalAnimation<? extends SnowAnimation>> particlesTaskManager;
 
     @Override
-    public void onEnable() {
+    public final void onEnable() { // called when the plugin is enabling.
         configurationManager = ConfigurationManager.getInstance(this);
         configurationManager.loadAllConfigs();
 

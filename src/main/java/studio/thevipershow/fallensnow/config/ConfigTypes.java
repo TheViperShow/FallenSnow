@@ -9,8 +9,7 @@ import studio.thevipershow.fallensnow.config.snow.SnowTomlConfig;
 public enum ConfigTypes implements ConfigHolder {
 
     SNOW_CONFIG(SnowTomlConfig.class),
-    GENERAL_CONFIG(GeneralTomlConfig.class)
-    ;
+    GENERAL_CONFIG(GeneralTomlConfig.class);
 
     private final Class<? extends AbstractTomlConfig<?>> tomlConfigClass;
 

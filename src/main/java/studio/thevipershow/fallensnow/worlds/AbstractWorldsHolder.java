@@ -18,11 +18,19 @@ public abstract class AbstractWorldsHolder<T extends Plugin, S extends Automatic
     protected final Set<World> enabledWorlds = new HashSet<>();
     protected S worldRemover;
 
+    /**
+     * Get all of the worlds that are considered valid for particles.
+     *
+     * @return The worlds.
+     */
     @Override
     public final @NotNull Collection<World> getValidWorlds() {
-        return enabledWorlds;
+        return null;
     }
 
+    /**
+     * Remove undesired worlds.
+     */
     public abstract void removeUndesiredWorlds();
 
 }

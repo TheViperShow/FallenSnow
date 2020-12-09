@@ -9,4 +9,5 @@ public final class GeneralTomlConfig extends AbstractTomlConfig<GeneralValues> {
     public GeneralTomlConfig(@NotNull FallenSnow fallenSnow) {
         super("general-settings.toml", fallenSnow, GeneralValues.class);
     }
+
 }

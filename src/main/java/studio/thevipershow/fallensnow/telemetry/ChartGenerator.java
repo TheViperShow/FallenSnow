@@ -11,9 +11,13 @@ public abstract class ChartGenerator implements MetricsHolder, CustomChartGenera
     private final Metrics metrics;
     private final Plugin plugin;
 
+    /**
+     * Get the Metrics for telemetry.
+     * @return The Metrics.
+     */
     @NotNull
     @Override
     public final Metrics getMetrics() {
-        return metrics;
+        return this.metrics;
     }
 }

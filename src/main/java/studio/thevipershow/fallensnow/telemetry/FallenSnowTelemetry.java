@@ -17,13 +17,21 @@ public final class FallenSnowTelemetry extends AbstractTelemetry<BStatsChartGene
         super(fallenSnow, 9590);
     }
 
-    public static FallenSnowTelemetry getInstance(@NotNull FallenSnow fallenSnow) {
+    /**
+     * Get the telemetry instance singleton.
+     * @param fallenSnow The FallenSnow instance.
+     * @return The FallenSnowTelemetry singleton.
+     */
+    public static synchronized FallenSnowTelemetry getInstance(@NotNull FallenSnow fallenSnow) {
         if (instance == null) {
             instance = new FallenSnowTelemetry(fallenSnow);
         }
         return instance;
     }
 
+    /**
+     * Start the telemetry service.
+     */
     public final void startTelemetry() {
         if (isTelemetryStarted) {
             throw new UnsupportedOperationException("The plugin tried to start telemetry twice!" +
@@ -33,10 +41,14 @@ public final class FallenSnowTelemetry extends AbstractTelemetry<BStatsChartGene
         var metrics = new Metrics(plugin, metricsID);
         this.chartGenerator = new BStatsChartGenerator(metrics, plugin);
         this.chartGenerator.generateCustomCharts();
-        isTelemetryStarted = true;
+        setTelemetryStarted(true);
         plugin.getLogger().info("Telemetry for this plugin has been enabled correctly.");
     }
 
+    /**
+     * Get the status of the telemetry service.
+     * @return The telemetry status.
+     */
     public final boolean isTelemetryEnabled() {
         GeneralTomlConfig generalConfig = plugin.getConfigurationManager().getConfig(ConfigTypes.GENERAL_CONFIG);
         var isTelemetryEnabled = generalConfig.getConfigValue(GeneralValues.TELEMETRY_ENABLED, Boolean.class);
