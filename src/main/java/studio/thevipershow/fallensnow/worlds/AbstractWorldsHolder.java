@@ -25,7 +25,7 @@ public abstract class AbstractWorldsHolder<T extends Plugin, S extends Automatic
      */
     @Override
     public final @NotNull Collection<World> getValidWorlds() {
-        return null;
+        return this.enabledWorlds;
     }
 
     /**
