@@ -5,7 +5,7 @@ import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
 @Getter
-public abstract class AbstractConfigurableParticlesTaskManager<T extends Plugin, S extends GlobalAnimation<?>> extends AbstractParticlesTaskManager<T,S> {
+public abstract class AbstractConfigurableParticlesTaskManager<T extends Plugin, S extends ConfigurableGlobalAnimation<?, T>> extends AbstractParticlesTaskManager<T,S> {
 
     private final double speed;
 

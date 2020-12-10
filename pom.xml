@@ -8,14 +8,43 @@
     <artifactId>FallenSnow</artifactId>
     <version>3.0.0</version>
     <packaging>jar</packaging>
+    <url>https://github.com/TheViperShow/FallenSnow</url>
 
     <name>FallenSnow</name>
 
     <description>Give snow effect in your minecraft server!</description>
     <properties>
+        <java.target>11</java.target>
         <java.version>11</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <mainClass>studio.thevipershow.fallensnow.FallenSnow</mainClass>
     </properties>
+
+    <organization>
+        <name>TheViperShow Development</name>
+        <url>https://discord.com/invite/JvBGJqc7wf</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <name>TheViperShow</name>
+            <email>thevipershowita@gmail.com</email>
+            <id>001</id>
+            <organization>${organization.name}</organization>
+            <organizationUrl>${organization.url}</organizationUrl>
+            <timezone>${user.timezone}</timezone>
+            <roles>
+                <role>Lead Developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>GNU Affero license</name>
+            <url>http://www.gnu.org/licenses/agpl-3.0.html</url>
+        </license>
+    </licenses>
 
     <build>
         <plugins>
@@ -26,6 +55,9 @@
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+                    <compilerArgs>
+                        <arg>-parameters</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
             <plugin>
@@ -46,6 +78,10 @@
                                 </relocation>
                                 <relocation>
                                     <pattern>com.moandjiezana</pattern>
+                                    <shadedPattern>studio.thevipershow.libs</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>co.aikar.locales</pattern>
                                     <shadedPattern>studio.thevipershow.libs</shadedPattern>
                                 </relocation>
                             </relocations>
@@ -75,6 +111,10 @@
         <repository>
             <id>CodeMC</id>
             <url>https://repo.codemc.org/repository/maven-public</url>
+        </repository>
+        <repository>
+            <id>aikar</id>
+            <url>https://repo.aikar.co/content/groups/aikar/</url>
         </repository>
     </repositories>
 
@@ -113,11 +153,19 @@
             <version>1.18.10</version>
             <scope>provided</scope>
         </dependency>
+        <!-- Junit Unit testing -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
+        </dependency>
+        <!-- Command library -->
+        <dependency>
+            <groupId>co.aikar</groupId>
+            <artifactId>acf-paper</artifactId>
+            <version>0.5.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>

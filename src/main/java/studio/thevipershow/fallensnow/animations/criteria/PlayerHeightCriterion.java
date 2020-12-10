@@ -8,9 +8,14 @@ import studio.thevipershow.fallensnow.animations.PlayerCriterion;
 
 @Getter
 @RequiredArgsConstructor
-public final class PlayerHeightCriterion implements PlayerCriterion {
+public final class PlayerHeightCriterion implements PlayerCriterion<CriterionClass> {
 
     private final long requiredHeight;
+
+    @Override
+    public final CriterionClass getEnumType() {
+        return CriterionClass.PLAYER_HEIGHT;
+    }
 
     @Override
     public final boolean matchesCriterion(@NotNull Player player) {

@@ -8,10 +8,20 @@ import studio.thevipershow.fallensnow.animations.PlayerCriterion;
 import studio.thevipershow.fallensnow.worlds.ValidWorldsHolder;
 
 @RequiredArgsConstructor
-public final class WorldValidityCriterion implements PlayerCriterion {
+public final class WorldValidityCriterion implements PlayerCriterion<CriterionClass> {
 
     @Getter
     private final ValidWorldsHolder validWorldsHolder;
+
+    /**
+     * Get representing enum.
+     *
+     * @return The Enum.
+     */
+    @Override
+    public final CriterionClass getEnumType() {
+        return CriterionClass.WORLD_VALIDITY;
+    }
 
     @Override
     public final boolean matchesCriterion(@NotNull Player player) {
