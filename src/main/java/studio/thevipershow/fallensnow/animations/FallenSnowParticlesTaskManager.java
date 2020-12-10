@@ -1,4 +1,4 @@
-package studio.thevipershow.fallensnow.particles;
+package studio.thevipershow.fallensnow.animations;
 
 import org.jetbrains.annotations.NotNull;
 import studio.thevipershow.fallensnow.FallenSnow;

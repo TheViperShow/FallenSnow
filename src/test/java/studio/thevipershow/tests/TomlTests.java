@@ -1,5 +1,7 @@
 package studio.thevipershow.tests;
 
+import java.util.Objects;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.tomlj.Toml;
 import org.tomlj.TomlParseResult;
@@ -42,8 +44,10 @@ public final class TomlTests {
             assertNotNull(String.format("The object obtained from the config at key %s was null!", value.getKey()), objectObtained);
             var obtainedClass = objectObtained.getClass();
             assertTrue(String.format("The value was not correct! Got %s but expected %s", obtainedClass.getName(), expectedClass.getName()), expectedClass.isAssignableFrom(obtainedClass));
+            System.out.println(objectObtained.toString());
         }
 
         System.out.println("All tests have been passed, congratulations!");
     }
+
 }

@@ -1,4 +1,4 @@
-package studio.thevipershow.fallensnow.particles;
+package studio.thevipershow.fallensnow.animations;
 
 import lombok.Getter;
 import org.bukkit.Particle;
@@ -6,13 +6,13 @@ import org.jetbrains.annotations.NotNull;
 import studio.thevipershow.fallensnow.FallenSnow;
 import studio.thevipershow.fallensnow.config.snow.SnowTomlConfig;
 import studio.thevipershow.fallensnow.config.snow.SnowValues;
-import studio.thevipershow.fallensnow.particles.criteria.*;
+import studio.thevipershow.fallensnow.animations.criteria.*;
 
 @Getter
 public final class GlobalSnowAnimation extends ConfigurableGlobalAnimation<SnowAnimation, FallenSnow> {
 
     public GlobalSnowAnimation(@NotNull SnowTomlConfig snowTomlConfig, @NotNull FallenSnow fallenSnow) {
-        super(fallenSnow, new SnowAnimation(Particle.valueOf(snowTomlConfig.getConfigValue(SnowValues.SNOW_PARTICLE, String.class)), snowTomlConfig.getConfigValue(SnowValues.SNOW_RANGE, Double.class), snowTomlConfig.getConfigValue(SnowValues.SNOW_SPEED, Double.class), snowTomlConfig.getConfigValue(SnowValues.SNOW_AMOUNT, Integer.class)));
+        super(fallenSnow, new SnowAnimation(Particle.valueOf(snowTomlConfig.getConfigValue(SnowValues.SNOW_PARTICLE, String.class)), snowTomlConfig.getConfigValue(SnowValues.SNOW_RANGE, Double.class), snowTomlConfig.getConfigValue(SnowValues.SNOW_SPEED, Double.class), snowTomlConfig.getConfigValue(SnowValues.SNOW_AMOUNT, Long.class)));
         addSnowCriteria(snowTomlConfig);
     }
 

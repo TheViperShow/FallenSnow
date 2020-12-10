@@ -1,4 +1,4 @@
-package studio.thevipershow.fallensnow.particles;
+package studio.thevipershow.fallensnow.animations;
 
 import lombok.Getter;
 import org.bukkit.Particle;
@@ -8,9 +8,9 @@ import org.jetbrains.annotations.NotNull;
 public abstract class ConfigurableParticleAnimation extends AbstractParticleAnimation {
 
     private final double range, speed;
-    private final int amount;
+    private final long amount;
 
-    public ConfigurableParticleAnimation(@NotNull Particle particle, double range, double speed, int amount) {
+    public ConfigurableParticleAnimation(@NotNull Particle particle, double range, double speed, long amount) {
         super(particle);
         this.range = range;
         this.speed = speed;

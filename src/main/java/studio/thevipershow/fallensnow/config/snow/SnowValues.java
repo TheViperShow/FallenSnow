@@ -3,11 +3,11 @@ package studio.thevipershow.fallensnow.config.snow;
 import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.tomlj.TomlArray;
-import studio.thevipershow.fallensnow.config.SectionKey;
+import studio.thevipershow.fallensnow.config.KeyHolder;
 import studio.thevipershow.fallensnow.config.SectionReturnType;
 
 @RequiredArgsConstructor
-public enum SnowValues implements SectionKey, SectionReturnType {
+public enum SnowValues implements KeyHolder, SectionReturnType {
 
     SNOW_PARTICLE("snow.particle", String.class),
     SNOW_RANGE("snow.range", Double.class),
@@ -19,8 +19,7 @@ public enum SnowValues implements SectionKey, SectionReturnType {
     SPECIFY_ENABLED_WORLDS("snow.mechanics.worlds.specify-enabled-worlds", Boolean.class),
     ENABLED_WORLDS("snow.mechanics.worlds.enabled-worlds", TomlArray.class),
     SNOW_ABOVE_Y("snow.mechanics.underground.snow-above-y", Boolean.class),
-    Y_LEVEL("snow.mechanics.underground.y-level", Long.class)
-    ;
+    Y_LEVEL("snow.mechanics.underground.y-level", Long.class);
 
     private final String key;
     private final Class<?> returnType;
@@ -31,7 +30,7 @@ public enum SnowValues implements SectionKey, SectionReturnType {
      * @return The key.
      */
     @Override
-    public @NotNull String getKey() {
+    public final @NotNull String getKey() {
         return this.key;
     }
 
@@ -41,7 +40,7 @@ public enum SnowValues implements SectionKey, SectionReturnType {
      * @return The return type.
      */
     @Override
-    public @NotNull Class<?> getReturnType() {
+    public final @NotNull Class<?> getReturnType() {
         return this.returnType;
     }
 }

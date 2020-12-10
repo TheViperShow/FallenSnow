@@ -1,4 +1,4 @@
-package studio.thevipershow.fallensnow.particles;
+package studio.thevipershow.fallensnow.animations;
 
 import org.bukkit.Particle;
 import org.bukkit.entity.Player;
@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 
 public final class SnowAnimation extends ConfigurableParticleAnimation {
 
-    public SnowAnimation(@NotNull Particle particle, double range, double speed, int amount) {
+    public SnowAnimation(@NotNull Particle particle, double range, double speed, long amount) {
         super(particle, range, speed, amount);
     }
 

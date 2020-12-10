@@ -1,4 +1,4 @@
-package studio.thevipershow.fallensnow.particles;
+package studio.thevipershow.fallensnow.animations;
 
 import lombok.Getter;
 import org.bukkit.plugin.Plugin;

@@ -1,4 +1,4 @@
-package studio.thevipershow.fallensnow.particles.criteria;
+package studio.thevipershow.fallensnow.animations.criteria;
 
 public final class VisualizeSnowPermissionCriterion extends PermissionCriterion {
 

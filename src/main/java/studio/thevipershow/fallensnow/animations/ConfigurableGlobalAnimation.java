@@ -1,4 +1,4 @@
-package studio.thevipershow.fallensnow.particles;
+package studio.thevipershow.fallensnow.animations;
 
 import com.google.common.collect.ImmutableList;
 import lombok.Getter;

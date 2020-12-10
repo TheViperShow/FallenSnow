@@ -1,4 +1,4 @@
-package studio.thevipershow.fallensnow.particles;
+package studio.thevipershow.fallensnow.animations;
 
 import org.bukkit.scheduler.BukkitTask;
 import org.jetbrains.annotations.Nullable;

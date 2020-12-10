@@ -1,8 +1,8 @@
-package studio.thevipershow.fallensnow.particles.criteria;
+package studio.thevipershow.fallensnow.animations.criteria;
 
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-import studio.thevipershow.fallensnow.particles.PlayerCriterion;
+import studio.thevipershow.fallensnow.animations.PlayerCriterion;
 
 public final class OutsideCriterion implements PlayerCriterion {
 

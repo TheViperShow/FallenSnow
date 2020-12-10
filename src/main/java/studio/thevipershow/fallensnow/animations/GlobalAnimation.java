@@ -1,4 +1,4 @@
-package studio.thevipershow.fallensnow.particles;
+package studio.thevipershow.fallensnow.animations;
 
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;

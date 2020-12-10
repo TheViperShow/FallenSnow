@@ -1,10 +1,10 @@
-package studio.thevipershow.fallensnow.particles.criteria;
+package studio.thevipershow.fallensnow.animations.criteria;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-import studio.thevipershow.fallensnow.particles.PlayerCriterion;
+import studio.thevipershow.fallensnow.animations.PlayerCriterion;
 import studio.thevipershow.fallensnow.worlds.ValidWorldsHolder;
 
 @RequiredArgsConstructor

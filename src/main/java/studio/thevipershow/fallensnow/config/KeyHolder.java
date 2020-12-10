@@ -3,7 +3,7 @@ package studio.thevipershow.fallensnow.config;
 import org.jetbrains.annotations.NotNull;
 
 @FunctionalInterface
-public interface SectionKey {
+public interface KeyHolder {
 
     /**
      * Get the key of the section.

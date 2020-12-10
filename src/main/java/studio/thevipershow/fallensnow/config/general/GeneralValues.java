@@ -2,11 +2,11 @@ package studio.thevipershow.fallensnow.config.general;
 
 import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
-import studio.thevipershow.fallensnow.config.SectionKey;
+import studio.thevipershow.fallensnow.config.KeyHolder;
 import studio.thevipershow.fallensnow.config.SectionReturnType;
 
 @RequiredArgsConstructor
-public enum GeneralValues implements SectionKey, SectionReturnType {
+public enum GeneralValues implements KeyHolder, SectionReturnType {
 
     CONFIG_VERSION("config.version", Long.class),
     TELEMETRY_ENABLED("telemetry.enabled", Boolean.class);

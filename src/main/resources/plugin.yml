@@ -8,5 +8,5 @@ commands:
     description: enable/disable snow in a world!
     aliases: [fallensnow, fs]
     permission: fallensnow.toggle
-    permission-message: "§8[§bFallenSnow]§7: §cYou do not have permissions."
-    usage: "§8[§bFallenSnow]§7: §cSyntax error!"
+    permission-message: "§8[§bFallenSnow§8]§7: §cYou do not have permissions."
+    usage: "§8[§bFallenSnow§8]§7: §cSyntax error!"

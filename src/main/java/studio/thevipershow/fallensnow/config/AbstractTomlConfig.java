@@ -1,6 +1,8 @@
 package studio.thevipershow.fallensnow.config;
 
 import com.google.common.collect.ImmutableList;
+import java.io.IOException;
+import java.util.Objects;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -13,17 +15,21 @@ import java.util.EnumMap;
 import java.util.List;
 
 @Getter
-public abstract class AbstractTomlConfig<T extends Enum<T> & SectionKey & SectionReturnType> {
+public abstract class AbstractTomlConfig<T extends Enum<T> & KeyHolder & SectionReturnType> {
 
     protected final File file;
-    protected final TomlParseResult parsedToml;
+    protected TomlParseResult parsedToml;
     protected final FallenSnow fallenSnow;
     protected final Class<? extends T> enumClass;
     protected final List<T> tValues;
     protected final EnumMap<T, Object> configValues;
 
     protected void loadAllConfigValues() {
-        tValues.forEach(v -> configValues.put(v, parsedToml.get(v.getKey())));
+    //    tValues.forEach(v -> configValues.put(v, parsedToml.get(v.getKey())));
+        for (final T t : tValues) {
+            var read = Objects.requireNonNull(this.parsedToml.get(t.getKey()), String.format("Reading the value %s returned null.", t.name()));
+            this.configValues.put(t, read);
+        }
     }
 
     protected void saveResource() {
@@ -37,7 +43,11 @@ public abstract class AbstractTomlConfig<T extends Enum<T> & SectionKey & Sectio
         if (!file.exists() || file.isDirectory() || !file.canRead()) {
             throw new RuntimeException("The file " + fileName + " could not be read!");
         }
-        this.parsedToml = Toml.parse(file.getPath());
+        try {
+            this.parsedToml = Toml.parse(file.toPath());
+        } catch (IOException e) {
+            fallenSnow.getLogger().warning("Could not get the file " + fileName + " as path.");
+        }
         this.enumClass = enumClass;
         this.tValues = ImmutableList.copyOf(enumClass.getEnumConstants());
         this.configValues = new EnumMap<>(enumClass);
@@ -55,11 +65,12 @@ public abstract class AbstractTomlConfig<T extends Enum<T> & SectionKey & Sectio
      * @return The value obtained from the config cast to the return type
      */
     @Nullable
-    public final <S> S getConfigValue(@NotNull T enumEntry, @NotNull Class<S> returnType) {
+    public final <S> S getConfigValue(@NotNull T enumEntry, @NotNull Class<? extends S> returnType) {
         if (this.configValues.containsKey(enumEntry)) {
             var obtained = this.configValues.get(enumEntry);
+            System.out.printf("Object value: %s%n", obtained.toString());
             if (returnType.isAssignableFrom(obtained.getClass()))
-                return (S) obtained;
+                return Objects.requireNonNull((S) obtained);
             else
                 throw new IllegalArgumentException(String.format("The return type for %s inside config %s was %s but it has been tried to be cast to %s.",
                         enumEntry.getKey(), getClass().getSimpleName(), obtained.getClass().getSimpleName(), returnType.getSimpleName()));
