@@ -3,11 +3,4 @@ version: 3.0.0
 main: studio.thevipershow.fallensnow.FallenSnow
 authors: [TheViperShow]
 description: Give snow effect in your minecraft server!
-api-version: '1.13'
-commands:
-  fsnow:
-    description: enable/disable snow in a world!
-    aliases: [fallensnow, fs]
-    permission: fallensnow.toggle
-    permission-message: "§8[§bFallenSnow§8]§7: §cYou do not have permissions."
-    usage: "§8[§bFallenSnow§8]§7: §cSyntax error!"
+

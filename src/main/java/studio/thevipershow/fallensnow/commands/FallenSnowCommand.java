@@ -3,6 +3,7 @@ package studio.thevipershow.fallensnow.commands;
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.CommandHelp;
 import co.aikar.commands.annotation.CommandAlias;
+import co.aikar.commands.annotation.CommandPermission;
 import co.aikar.commands.annotation.Description;
 import co.aikar.commands.annotation.HelpCommand;
 import co.aikar.commands.annotation.Subcommand;
@@ -42,6 +43,7 @@ public final class FallenSnowCommand extends BaseCommand {
     }
 
     @Subcommand("toggle")
+    @CommandPermission("fallen-snow.enable")
     @Description("Use this command to toggle snow particles.")
     public final void toggleSnow(Player player) {
         ToggleStatusCriterion toggleStatusCriterion = fallenSnow.getParticlesTaskManager().getAnimation().getCriterion(CriterionClass.TOGGLE);
