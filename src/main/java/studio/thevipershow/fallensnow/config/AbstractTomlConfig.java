@@ -25,8 +25,7 @@ public abstract class AbstractTomlConfig<T extends Enum<T> & KeyHolder & Section
     protected final EnumMap<T, Object> configValues;
 
     protected void loadAllConfigValues() {
-    //    tValues.forEach(v -> configValues.put(v, parsedToml.get(v.getKey())));
-        for (final T t : tValues) {
+        for (T t : tValues) {
             var read = Objects.requireNonNull(this.parsedToml.get(t.getKey()), String.format("Reading the value %s returned null.", t.name()));
             this.configValues.put(t, read);
         }
@@ -68,7 +67,6 @@ public abstract class AbstractTomlConfig<T extends Enum<T> & KeyHolder & Section
     public final <S> S getConfigValue(@NotNull T enumEntry, @NotNull Class<? extends S> returnType) {
         if (this.configValues.containsKey(enumEntry)) {
             var obtained = this.configValues.get(enumEntry);
-            System.out.printf("Object value: %s%n", obtained.toString());
             if (returnType.isAssignableFrom(obtained.getClass()))
                 return Objects.requireNonNull((S) obtained);
             else
