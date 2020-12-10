@@ -1,5 +1,6 @@
 package studio.thevipershow.fallensnow;
 
+import co.aikar.commands.CommandManager;
 import co.aikar.commands.PaperCommandManager;
 import lombok.Getter;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -39,6 +40,7 @@ public final class FallenSnow extends JavaPlugin {
         particlesTaskManager.startGlobalEffect();
 
         commandManager = new PaperCommandManager(this);
+        commandManager.enableUnstableAPI("help");
         commandManager.registerCommand(FallenSnowCommand.getInstance(this));
 
         telemetry = new FallenSnowTelemetry(this);

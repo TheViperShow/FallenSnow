@@ -13,6 +13,6 @@ public final class RainingCriterion implements PlayerCriterion<CriterionClass> {
 
     @Override
     public final boolean matchesCriterion(@NotNull Player player) {
-        return !player.getWorld().isThundering();
+        return !player.getWorld().isThundering() && !player.getWorld().hasStorm();
     }
 }
