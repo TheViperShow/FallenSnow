@@ -73,16 +73,28 @@
                         <configuration>
                             <relocations>
                                 <relocation>
-                                    <pattern>org.bstats</pattern>
-                                    <shadedPattern>studio.thevipershow.libs</shadedPattern>
+                                    <pattern>org.bstats.bukkit</pattern>
+                                    <shadedPattern>studio.thevipershow.libs.bstats</shadedPattern>
                                 </relocation>
                                 <relocation>
-                                    <pattern>com.moandjiezana</pattern>
-                                    <shadedPattern>studio.thevipershow.libs</shadedPattern>
+                                    <pattern>co.aikar.commands</pattern>
+                                    <shadedPattern>studio.thevipershow.libs.acf</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>javax.annotation</pattern>
+                                    <shadedPattern>studio.thevipershow.libs.javax</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.antlr.v4.runtime</pattern>
+                                    <shadedPattern>studio.thevipershow.libs.antlr</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.tomlj</pattern>
+                                    <shadedPattern>studio.thevipershow.libs.tomlj</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>co.aikar.locales</pattern>
-                                    <shadedPattern>studio.thevipershow.libs</shadedPattern>
+                                    <shadedPattern>studio.thevipershow.libs.acf</shadedPattern>
                                 </relocation>
                             </relocations>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
