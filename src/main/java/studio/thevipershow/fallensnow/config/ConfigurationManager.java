@@ -1,6 +1,7 @@
 package studio.thevipershow.fallensnow.config;
 
 import lombok.AccessLevel;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -23,6 +24,7 @@ public final class ConfigurationManager {
         return instance;
     }
 
+    @Getter
     private final EnumMap<ConfigTypes, AbstractTomlConfig<?>> loadedTomlConfigs = new EnumMap<>(ConfigTypes.class);
 
     public final void loadAllConfigs() {

@@ -16,6 +16,6 @@ public abstract class AbstractConfigurableParticlesTaskManager<T extends Plugin,
 
     @Override
     public void startGlobalEffect() {
-        getPlugin().getServer().getScheduler().runTaskTimer(getPlugin(), () -> getAnimation().doGlobalAnimation(), 20L, (long) (20L * speed));
+        setTask(getPlugin().getServer().getScheduler().runTaskTimer(getPlugin(), () -> getAnimation().doGlobalAnimation(), 20L, (long) (20L * speed)));
     }
 }

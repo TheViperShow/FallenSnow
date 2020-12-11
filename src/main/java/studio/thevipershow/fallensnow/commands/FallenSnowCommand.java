@@ -51,12 +51,33 @@ public final class FallenSnowCommand extends BaseCommand {
             player.sendMessage(color(logoPrefix + "&csomething went wrong..."));
             return;
         }
-        boolean currentStatus = toggleStatusCriterion.getCurrentStatus(player);
+        var currentStatus = toggleStatusCriterion.getCurrentStatus(player);
         if (currentStatus) {
             player.sendMessage(color(logoPrefix + "You have &cdisabled &7particles!"));
         } else {
             player.sendMessage(color(logoPrefix + "You have &aenabled &7particles!"));
         }
         toggleStatusCriterion.togglePlayerStatus(player);
+    }
+
+    @Subcommand("reload")
+    @CommandPermission("fallen-snow.admin")
+    @Description("Use this command to reload the config values.")
+    public final void reloadPlugin(Player player) {
+        var  dataCleaningStart = System.currentTimeMillis();
+        player.sendMessage(color(logoPrefix + "Starting data cleaning ..."));
+        fallenSnow.getParticlesTaskManager().stopGlobalTask();
+        fallenSnow.setParticlesTaskManager(null);
+        fallenSnow.getConfigurationManager().getLoadedTomlConfigs().clear();
+        fallenSnow.setConfigurationManager(null);
+        fallenSnow.getWorldsHolder().getValidWorlds().clear();
+        fallenSnow.setWorldsHolder(null);
+        player.sendMessage(color(logoPrefix + String.format("data cleaning finished in %d milliseconds.", System.currentTimeMillis() - dataCleaningStart)));
+        var dataParsingStart = System.currentTimeMillis();
+        fallenSnow.assignConfigurations();
+        fallenSnow.assignWorldsHolder();
+        fallenSnow.assignParticlesTaskManager();
+        player.sendMessage(color(logoPrefix + String.format("data assigning finished in %d milliseconds.", System.currentTimeMillis() - dataParsingStart)));
+
     }
 }

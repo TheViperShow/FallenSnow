@@ -28,9 +28,11 @@ public interface ParticlesTaskManager<T extends GlobalAnimation<?>> {
      */
     default void stopGlobalTask() {
         var task = getRunningTask();
-        var canWeCancel = !task.isCancelled();
-        if (canWeCancel) {
-            task.cancel();
+        if (task != null) {
+            var canWeCancel = !task.isCancelled();
+            if (canWeCancel) {
+                task.cancel();
+            }
         }
     }
 }
