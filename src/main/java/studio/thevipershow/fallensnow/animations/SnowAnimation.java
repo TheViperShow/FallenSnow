@@ -17,11 +17,16 @@ public final class SnowAnimation extends ConfigurableParticleAnimation {
      */
     @Override
     public final void doAnimation(@NotNull Player player) {
-        var x = player.getLocation().getX();
-        var y = player.getLocation().getY();
-        var z = player.getLocation().getZ();
-        for (int k = 0; k <= getAmount(); k++) {
-            player.spawnParticle(getParticle(), x, y, z, 1, getRange(), getRange(), getRange(), getSpeed(), null);
+        final var location = player.getLocation();
+        final var x = location.getX();
+        final var y = location.getY();
+        final var z = location.getZ();
+        final var particle = getParticle();
+        final var range = getRange();
+        final var speed = getSpeed();
+
+        for (short k = 0; k <= getAmount(); k++) {
+            player.spawnParticle(particle, x, y, z, 1, range, range, range, speed, null);
         }
     }
 }

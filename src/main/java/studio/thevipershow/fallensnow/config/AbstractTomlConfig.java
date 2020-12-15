@@ -20,7 +20,7 @@ public abstract class AbstractTomlConfig<T extends Enum<T> & KeyHolder & Section
     protected final File file;
     protected TomlParseResult parsedToml;
     protected final FallenSnow fallenSnow;
-    protected final Class<? extends T> enumClass;
+    protected final Class<T> enumClass;
     protected final List<T> tValues;
     protected final EnumMap<T, Object> configValues;
 

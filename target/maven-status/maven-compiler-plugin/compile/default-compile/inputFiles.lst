@@ -7,8 +7,7 @@ C:\Users\marco\Documents\IntelliJ\FallenSnow\src\main\java\studio\thevipershow\f
 C:\Users\marco\Documents\IntelliJ\FallenSnow\src\main\java\studio\thevipershow\fallensnow\config\ConfigTypes.java
 C:\Users\marco\Documents\IntelliJ\FallenSnow\src\main\java\studio\thevipershow\fallensnow\animations\criteria\PlayerHeightCriterion.java
 C:\Users\marco\Documents\IntelliJ\FallenSnow\src\main\java\studio\thevipershow\fallensnow\telemetry\FallenSnowTelemetry.java
-C:\Users\marco\Documents\IntelliJ\FallenSnow\src\main\java\studio\thevipershow\fallensnow\animations\FallenSnowParticlesTaskManager.java
-C:\Users\marco\Documents\IntelliJ\FallenSnow\src\main\java\studio\thevipershow\fallensnow\animations\AbstractConfigurableParticlesTaskManager.java
+C:\Users\marco\Documents\IntelliJ\FallenSnow\src\main\java\studio\thevipershow\fallensnow\animations\FallenSnowParticlesTaskManagerAsync.java
 C:\Users\marco\Documents\IntelliJ\FallenSnow\src\main\java\studio\thevipershow\fallensnow\animations\PlayerCriterion.java
 C:\Users\marco\Documents\IntelliJ\FallenSnow\src\main\java\studio\thevipershow\fallensnow\animations\ParticlesTaskManager.java
 C:\Users\marco\Documents\IntelliJ\FallenSnow\src\main\java\studio\thevipershow\fallensnow\config\general\GeneralValues.java
@@ -27,6 +26,7 @@ C:\Users\marco\Documents\IntelliJ\FallenSnow\src\main\java\studio\thevipershow\f
 C:\Users\marco\Documents\IntelliJ\FallenSnow\src\main\java\studio\thevipershow\fallensnow\animations\criteria\PermissionCriterion.java
 C:\Users\marco\Documents\IntelliJ\FallenSnow\src\main\java\studio\thevipershow\fallensnow\config\ConfigHolder.java
 C:\Users\marco\Documents\IntelliJ\FallenSnow\src\main\java\studio\thevipershow\fallensnow\telemetry\AbstractTelemetry.java
+C:\Users\marco\Documents\IntelliJ\FallenSnow\src\main\java\studio\thevipershow\fallensnow\animations\AbstractAsyncConfigurableParticlesTaskManager.java
 C:\Users\marco\Documents\IntelliJ\FallenSnow\src\main\java\studio\thevipershow\fallensnow\worlds\FallenSnowWorldsHolder.java
 C:\Users\marco\Documents\IntelliJ\FallenSnow\src\main\java\studio\thevipershow\fallensnow\telemetry\ChartGenerator.java
 C:\Users\marco\Documents\IntelliJ\FallenSnow\src\main\java\studio\thevipershow\fallensnow\config\AbstractTomlConfig.java

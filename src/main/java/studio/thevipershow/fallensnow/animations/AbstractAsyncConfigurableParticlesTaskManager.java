@@ -5,11 +5,11 @@ import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
 @Getter
-public abstract class AbstractConfigurableParticlesTaskManager<T extends Plugin, S extends ConfigurableGlobalAnimation<?, T>> extends AbstractParticlesTaskManager<T,S> {
+public abstract class AbstractAsyncConfigurableParticlesTaskManager<T extends Plugin, S extends ConfigurableGlobalAnimation<?, T>> extends AbstractParticlesTaskManager<T,S> {
 
     private final double speed;
 
-    public AbstractConfigurableParticlesTaskManager(@NotNull S globalAnimation, @NotNull T plugin, double speed) {
+    public AbstractAsyncConfigurableParticlesTaskManager(@NotNull S globalAnimation, @NotNull T plugin, double speed) {
         super(globalAnimation, plugin);
         this.speed = speed;
     }

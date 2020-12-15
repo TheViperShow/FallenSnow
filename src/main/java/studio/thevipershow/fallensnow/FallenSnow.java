@@ -1,13 +1,12 @@
 package studio.thevipershow.fallensnow;
 
 import co.aikar.commands.PaperCommandManager;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.plugin.java.JavaPlugin;
-import studio.thevipershow.fallensnow.animations.AbstractConfigurableParticlesTaskManager;
+import studio.thevipershow.fallensnow.animations.AbstractAsyncConfigurableParticlesTaskManager;
 import studio.thevipershow.fallensnow.animations.ConfigurableGlobalAnimation;
-import studio.thevipershow.fallensnow.animations.FallenSnowParticlesTaskManager;
+import studio.thevipershow.fallensnow.animations.FallenSnowParticlesTaskManagerAsync;
 import studio.thevipershow.fallensnow.animations.SnowAnimation;
 import studio.thevipershow.fallensnow.commands.FallenSnowCommand;
 import studio.thevipershow.fallensnow.config.ConfigurationManager;
@@ -25,7 +24,7 @@ public final class FallenSnow extends JavaPlugin {
     private ConfigurationManager configurationManager;
     private AbstractTelemetry<BStatsChartGenerator, FallenSnow> telemetry;
     private AbstractWorldsHolder<FallenSnow, FallenSnowAutomaticWorldRemover> worldsHolder;
-    private AbstractConfigurableParticlesTaskManager<FallenSnow, ? extends ConfigurableGlobalAnimation<? extends SnowAnimation, FallenSnow>> particlesTaskManager;
+    private AbstractAsyncConfigurableParticlesTaskManager<FallenSnow, ? extends ConfigurableGlobalAnimation<? extends SnowAnimation, FallenSnow>> particlesTaskManager;
     private PaperCommandManager commandManager;
 
     public final void assignConfigurations() {
@@ -40,7 +39,7 @@ public final class FallenSnow extends JavaPlugin {
     }
 
     public final void assignParticlesTaskManager() {
-        particlesTaskManager = new FallenSnowParticlesTaskManager(this);
+        particlesTaskManager = new FallenSnowParticlesTaskManagerAsync(this);
         particlesTaskManager.startGlobalEffect();
     }
 

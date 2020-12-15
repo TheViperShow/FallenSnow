@@ -8,7 +8,6 @@ studio\thevipershow\fallensnow\config\snow\SnowTomlConfig.class
 studio\thevipershow\fallensnow\telemetry\ChartGenerator.class
 studio\thevipershow\fallensnow\animations\GlobalSnowAnimation.class
 studio\thevipershow\fallensnow\telemetry\MetricsHolder.class
-studio\thevipershow\fallensnow\animations\AbstractConfigurableParticlesTaskManager.class
 studio\thevipershow\fallensnow\animations\AbstractParticlesTaskManager.class
 studio\thevipershow\fallensnow\animations\ParticlesTaskManager.class
 studio\thevipershow\fallensnow\animations\criteria\ToggleStatusCriterion.class
@@ -18,6 +17,7 @@ studio\thevipershow\fallensnow\animations\criteria\CriterionClass.class
 studio\thevipershow\fallensnow\animations\criteria\RainingCriterion.class
 studio\thevipershow\fallensnow\config\general\GeneralValues.class
 studio\thevipershow\fallensnow\animations\criteria\PlayerHeightCriterion.class
+studio\thevipershow\fallensnow\animations\FallenSnowParticlesTaskManagerAsync.class
 studio\thevipershow\fallensnow\worlds\AbstractAutomaticWorldRemover.class
 studio\thevipershow\fallensnow\worlds\ValidWorldsHolder.class
 studio\thevipershow\fallensnow\animations\criteria\OutsideCriterion.class
@@ -29,8 +29,8 @@ studio\thevipershow\fallensnow\FallenSnow.class
 studio\thevipershow\fallensnow\config\general\GeneralTomlConfig.class
 studio\thevipershow\fallensnow\animations\criteria\WorldValidityCriterion.class
 studio\thevipershow\fallensnow\animations\PlayerCriterion.class
-studio\thevipershow\fallensnow\animations\FallenSnowParticlesTaskManager.class
 studio\thevipershow\fallensnow\telemetry\BStatsChartGenerator.class
+studio\thevipershow\fallensnow\animations\AbstractAsyncConfigurableParticlesTaskManager.class
 studio\thevipershow\fallensnow\worlds\FallenSnowAutomaticWorldRemover.class
 studio\thevipershow\fallensnow\worlds\FallenSnowWorldsHolder.class
 studio\thevipershow\fallensnow\telemetry\TelemetryService.class

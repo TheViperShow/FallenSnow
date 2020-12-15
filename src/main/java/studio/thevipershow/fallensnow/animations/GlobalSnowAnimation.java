@@ -43,7 +43,8 @@ public final class GlobalSnowAnimation extends ConfigurableGlobalAnimation<SnowA
             addCriterion(new WorldValidityCriterion(getPlugin().getWorldsHolder()));
         }
 
-        addCriterion(new ToggleStatusCriterion());
+        var statusCheck = new ToggleStatusCriterion();
+        addCriterion(statusCheck);
     }
 
 }

@@ -21,7 +21,6 @@ public abstract class ConfigurableGlobalAnimation<T extends ConfigurableParticle
         for (PlayerCriterion<?> playerCriterion : particleAffectCriteria) {
             this.criterionHashMap.put(playerCriterion.getEnumType(), playerCriterion);
         }
-        //this.particleAffectCriteria.addAll(ImmutableList.copyOf(particleAffectCriteria));
         this.configurableAnimation = configurableAnimation;
     }
 
