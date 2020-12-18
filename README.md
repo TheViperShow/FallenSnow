@@ -4,4 +4,4 @@
 Give snow effect in your minecraft server!
 <br>
 <h3> Plugin Stats </h3>
-![bstats](https://proxy.spigotmc.org/d745d0dcc6539517ace046e91729668355399fba?url=https%3A%2F%2Fbstats.org%2Fsignatures%2Fbukkit%2FFallenSnow.svg%2F)
+![bstats](https://bstats.org/signatures/bukkit/FallenSnow.svg/)
