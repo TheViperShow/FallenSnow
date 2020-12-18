@@ -1,9 +1,9 @@
 package studio.thevipershow.fallensnow.animations;
 
+import java.util.Collection;
+import lombok.var;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Collection;
 
 public interface GlobalAnimation<T extends AbstractParticleAnimation> {
 

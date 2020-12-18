@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.util.Objects;
 import lombok.Getter;
+import lombok.var;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.tomlj.Toml;

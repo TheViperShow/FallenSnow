@@ -1,6 +1,7 @@
 package studio.thevipershow.fallensnow.telemetry;
 
 import lombok.Getter;
+import lombok.val;
 import org.bstats.bukkit.Metrics;
 import org.jetbrains.annotations.NotNull;
 import studio.thevipershow.fallensnow.FallenSnow;
@@ -38,7 +39,7 @@ public final class FallenSnowTelemetry extends AbstractTelemetry<BStatsChartGene
                     "\nThis may be caused by \"/reload\" or PlugMan usage, please STOP using such.");
         }
 
-        var metrics = new Metrics(plugin, metricsID);
+        val metrics = new Metrics(plugin, metricsID);
         this.chartGenerator = new BStatsChartGenerator(metrics, plugin);
         this.chartGenerator.generateCustomCharts();
         setTelemetryStarted(true);
@@ -51,7 +52,7 @@ public final class FallenSnowTelemetry extends AbstractTelemetry<BStatsChartGene
      */
     public final boolean isTelemetryEnabled() {
         GeneralTomlConfig generalConfig = plugin.getConfigurationManager().getConfig(ConfigTypes.GENERAL_CONFIG);
-        var isTelemetryEnabled = generalConfig.getConfigValue(GeneralValues.TELEMETRY_ENABLED, Boolean.class);
+        val isTelemetryEnabled = generalConfig.getConfigValue(GeneralValues.TELEMETRY_ENABLED, Boolean.class);
         return isTelemetryEnabled == null || isTelemetryEnabled;
     }
 }

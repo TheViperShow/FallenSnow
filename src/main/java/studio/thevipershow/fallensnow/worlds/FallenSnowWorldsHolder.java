@@ -1,5 +1,7 @@
 package studio.thevipershow.fallensnow.worlds;
 
+import lombok.val;
+import lombok.var;
 import org.bukkit.World;
 import org.jetbrains.annotations.NotNull;
 import org.tomlj.TomlArray;
@@ -21,16 +23,16 @@ public final class FallenSnowWorldsHolder extends AbstractWorldsHolder<FallenSno
      */
     @Override
     public final void removeUndesiredWorlds() {
-        var configManager = plugin.getConfigurationManager();
+        val configManager = plugin.getConfigurationManager();
         SnowTomlConfig snowConfig = configManager.getConfig(ConfigTypes.SNOW_CONFIG);
         if (snowConfig == null) {
             throw new RuntimeException("TOML snow config was invalid!");
         }
-        var specifyWorlds = snowConfig.getConfigValue(SnowValues.SPECIFY_ENABLED_WORLDS, Boolean.class);
+        val specifyWorlds = snowConfig.getConfigValue(SnowValues.SPECIFY_ENABLED_WORLDS, Boolean.class);
         if (specifyWorlds == null || !specifyWorlds) {
             return;
         }
-        var enabledWorlds = snowConfig.getConfigValue(SnowValues.ENABLED_WORLDS, TomlArray.class);
+        val enabledWorlds = snowConfig.getConfigValue(SnowValues.ENABLED_WORLDS, TomlArray.class);
         if (enabledWorlds == null) {
             throw new RuntimeException("The enabled worlds section was not set!");
         }

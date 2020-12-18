@@ -1,12 +1,18 @@
 package studio.thevipershow.fallensnow.animations;
 
 import lombok.Getter;
+import lombok.var;
 import org.bukkit.Particle;
 import org.jetbrains.annotations.NotNull;
 import studio.thevipershow.fallensnow.FallenSnow;
+import studio.thevipershow.fallensnow.animations.criteria.OutsideCriterion;
+import studio.thevipershow.fallensnow.animations.criteria.PlayerHeightCriterion;
+import studio.thevipershow.fallensnow.animations.criteria.RainingCriterion;
+import studio.thevipershow.fallensnow.animations.criteria.ToggleStatusCriterion;
+import studio.thevipershow.fallensnow.animations.criteria.VisualizeSnowPermissionCriterion;
+import studio.thevipershow.fallensnow.animations.criteria.WorldValidityCriterion;
 import studio.thevipershow.fallensnow.config.snow.SnowTomlConfig;
 import studio.thevipershow.fallensnow.config.snow.SnowValues;
-import studio.thevipershow.fallensnow.animations.criteria.*;
 
 @Getter
 public final class GlobalSnowAnimation extends ConfigurableGlobalAnimation<SnowAnimation, FallenSnow> {

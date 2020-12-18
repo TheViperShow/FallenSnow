@@ -3,6 +3,7 @@ package studio.thevipershow.fallensnow.config;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.var;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import studio.thevipershow.fallensnow.FallenSnow;

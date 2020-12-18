@@ -1,17 +1,14 @@
 package studio.thevipershow.tests;
 
-import java.util.Objects;
-import org.junit.BeforeClass;
+import java.io.File;
+import java.io.IOException;
+import lombok.var;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import org.tomlj.Toml;
 import org.tomlj.TomlParseResult;
 import studio.thevipershow.fallensnow.config.snow.SnowValues;
-
-import java.io.File;
-import java.io.IOException;
-
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 
 public final class TomlTests {
 
@@ -20,7 +17,7 @@ public final class TomlTests {
     private static TomlParseResult tomlParseResult;
 
     @Test
-    public final void obtainResource() throws IOException {
+    public final void obtainResource() {
         var url = classLoader.getResource("snow-settings.toml");
         assertNotNull("The resource file was null!", url);
         tomlFile = new File(url.getPath());

@@ -9,6 +9,7 @@ import co.aikar.commands.annotation.HelpCommand;
 import co.aikar.commands.annotation.Subcommand;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
+import lombok.var;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;

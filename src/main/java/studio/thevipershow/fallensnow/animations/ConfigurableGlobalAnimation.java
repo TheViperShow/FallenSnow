@@ -49,7 +49,7 @@ public abstract class ConfigurableGlobalAnimation<T extends ConfigurableParticle
     public @NotNull Collection<Player> getAffectedPlayers() {
         return plugin.getServer().getOnlinePlayers().stream()
                 .filter(player -> this.criterionHashMap.values().stream().allMatch(criterion -> criterion.matchesCriterion(player)))
-                .collect(Collectors.toUnmodifiableSet());
+                .collect(Collectors.toSet());
     }
 
     /**

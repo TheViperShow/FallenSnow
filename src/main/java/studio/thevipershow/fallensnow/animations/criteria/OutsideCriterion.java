@@ -1,5 +1,6 @@
 package studio.thevipershow.fallensnow.animations.criteria;
 
+import lombok.var;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import studio.thevipershow.fallensnow.animations.PlayerCriterion;

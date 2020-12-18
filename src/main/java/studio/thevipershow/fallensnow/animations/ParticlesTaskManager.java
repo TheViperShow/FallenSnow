@@ -1,5 +1,6 @@
 package studio.thevipershow.fallensnow.animations;
 
+import lombok.var;
 import org.bukkit.scheduler.BukkitTask;
 import org.jetbrains.annotations.Nullable;
 
